@@ -1,0 +1,45 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Dependencies and generated output
+node_modules/
+vendor/
+build/
+dist/
+coverage/
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+
+# File and Folder not to be include
+Accordion FAQ
+Character & Word Counter
+Color Changer
+Day 1
+Filterable Product
+Live Digital Clock
+Random Quote
+Show and hide Password
+Toggle Mode
+example.html
+example.js

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 5: Pop Window</title>
+
+    <!-- Style Element -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8fafc;
+            color: #1e293b;
+            padding: 20px;
+        }
+
+
+        .page-content {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .primary-btn {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .primary-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Full-screen Dark Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 50;
+        }
+
+        /* The Modal Card */
+        .modal-card {
+            position: relative;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .modal-card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        .modal-card p {
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        /* Close Icon */
+
+        .close-icon {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: #94a3b8;
+            cursor: pointer;
+            padding: 4px  8px;
+            border-radius: 4px;
+        }
+
+        .close-icon:hover {
+            color: #0f172a;
+            background-color: #f1f5f9;
+        }
+
+        /* Helper class to hide elements */
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Main page trigger button -->
+    <main class="page-content">
+        <h1>Custom Modal Demo</h1>
+        <p>Click below to open a clean popup dialog window.</p>
+        <button class="primary-btn" id="open-btn">Open Model</button>
+    </main>
+
+    <!-- The Modal Overlay (Hidden by default) -->
+    <div id="modal-overlay" class="overlay hidden">
+        <div class="modal-card">
+            <button id="close-btn" class="close-icon" aria-label="Close modal">✕</button>
+            <h2>Speical Announcement</h2>
+            <p>This is a custom modal popup window. Modals focus user attention on a single task or notice.</p>
+            <button id="confirm-btn" class="primary-btn">Got It!</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
