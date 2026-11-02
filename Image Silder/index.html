@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Style Element -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1f5f9;
+            padding: 20px;
+        }
+
+        .slider-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 480px;
+            overflow: hidden;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            height: 280px;
+            background-color: #0f172a;
+        }
+
+        #slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slider-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px 8px;
+        }
+
+        #image-caption {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        #image-counter {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #64748b;
+            background-color: #f8fafc;
+            padding: 4px 8px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            padding: 12px 20px 20px;
+        }
+
+        .nav-btn {
+            flex: 1;
+            padding: 10px;
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .nav-btn:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <main class="slider-card">
+        <div class="image-wrapper">
+            <img id="slider-image" src="" alt="Slider visual">
+        </div>
+
+        <div class="slider-info">
+            <p id="image-caption">Image Title</p>
+            <span id="image-counter">1 / 4</span>
+        </div>
+
+        <div class="controls">
+            <button id="prev-btn" class="nav-btn">← Prev</button>
+            <button id="next-btn" class="nav-btn">Next →</button>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
