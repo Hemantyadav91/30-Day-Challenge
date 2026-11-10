@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 11: Persistent Notes App</title>
+
+    <!-- Style Element -->
+    <style>
+        /* CSS Reset */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #f1f5f8;
+            color: #1e293b;
+            padding: 30px 16px;
+        }
+
+        .app-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        /* Form Card */
+
+        .form-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        #note-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        #note-title, #note-body {
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            outline: none;
+            width: 100%;
+        }
+
+        #note-title:focus, #note-body:focus {
+            border-color: #2563eb;
+        }
+
+        #note-body {
+            resize: vertical;
+        }
+
+        #add-note-btn {
+            align-self: flex-start;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            background-color: #2563eb;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        #add-note-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Notes Grid */
+
+        .notes-section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            color: #334155;
+        }
+
+        .note-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 16px;
+        }
+
+        /* Individual Note Card */
+        
+        .note-card {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            border-top: 4px solid #3b82f6;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+
+        .note-card h3 {
+            font-size: 1.1rem;
+            color: #0f172a;
+            margin-bottom: 8px;
+            word-break: break-word;
+        }
+
+        .note-card p {
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.4;
+            margin-bottom: 14px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .delete-btn {
+            align-self: flex-end;
+            background: none;
+            border: 1px solid #fecaca;
+            border-radius: 4px;
+            color: #ef4444;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .delete-btn:hover {
+            background-color: #fee2e2;
+        }
+
+        .empty-message {
+            color: #94a3b8;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>My Quick Notes</h1>
+            <p>Capture thougths and keep them saved in your browser.</p>
+        </header>
+
+        <!-- Note Creation Form -->
+        <section class="form-card">
+
+            <form id="note-form">
+                <input type="text" id="note-title" placeholder="Note Title (e.g. Shopping List)" required>
+
+                <textarea id="note-body" placeholder="Write your note here..." required></textarea>
+
+                <button type="submit" id="add-note-btn">Add note</button>
+            </form>
+        </section>
+
+        <!-- Note Display Section -->
+        <section class="notes-section">
+            <h2>Save Notes</h2>
+
+            <div id="note-grid" class="note-grid">
+                <!-- JavaScript will insert notes cards here  -->
+            </div>
+        </section>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
